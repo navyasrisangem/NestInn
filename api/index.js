@@ -24,7 +24,7 @@ mongoose.connection.on("disconnected", ()=> {
     console.log("mongoDB disconnected!");
 });
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:5173"];
+const allowedOrigins = ["http://localhost:3000", "http://localhost:5173", "https://nestinn-client.onrender.com"];
 
 //middlewares
 
