@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useContext,useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
-import SearchItem from "../../components/searchItem/SearchItem";
+import SearchItem from "../../components/searchItem/searchItem";
 import "./list.css";
 import useFetch from "../../hooks/useFetch";
 import { SearchContext } from "../../context/SearchContext";
