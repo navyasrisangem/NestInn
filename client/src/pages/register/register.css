@@ -1,0 +1,108 @@
+.register {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .rContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+    background: #D9B8C4;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    text-align: center;
+  }
+  
+ 
+  .rTitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2D232E;
+    margin-bottom: 10px;
+  }
+  
+ 
+  .rForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+ 
+  .rColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 48%;
+  }
+ 
+  .rFullWidth {
+    width: 100%;
+    text-align: left;
+  }
+ 
+  .rGroup {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .rLabel {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2D232E;
+    margin-bottom: 5px;
+  }
+  
+  .rInput {
+    height: 30px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .rInput:focus {
+    border-color: #2D232E;
+  }
+  
+ 
+  input[type="file"] {
+    border: none;
+    background: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+ 
+  .rButton {
+    border: none;
+    padding: 12px 15px;
+    background: #2D232E;
+    color: #D9B8C4;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .loginLink {
+    color: rgb(28, 28, 199);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .loginLink:hover {
+    text-decoration: underline;
+  }
+  
