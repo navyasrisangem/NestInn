@@ -1,6 +1,5 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns, userRows } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import { useState, useEffect,useContext } from "react";
 import useFetch from "../../hooks/useFetch";
@@ -16,7 +15,7 @@ const Datatable = ({ columns }) => {
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState();
   const [selectedItem, setSelectedItem] = useState(null);
-  const { data, loading, error } = useFetch(`${API_URL}/${path}`);
+  const { data} = useFetch(`${API_URL}/${path}`);
 
   const { fetchUserData } = useContext(AuthContext);  //  Trigger client update
 
