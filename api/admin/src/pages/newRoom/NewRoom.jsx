@@ -6,7 +6,7 @@ import { roomInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://nestinn.onrender.com/api";
 
 const NewRoom = () => {
   const [info, setInfo] = useState({});
