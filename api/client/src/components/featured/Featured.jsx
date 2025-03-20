@@ -5,7 +5,7 @@ import HyderabadImg from "/images/hyderabad.png";
 import BangaloreImg from "/images/bangalore.png";
 import MumbaiImg from "/images/mumbai.png";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://nestinn.onrender.com/api";
 
 const Featured = () => {
     const navigate = useNavigate();
