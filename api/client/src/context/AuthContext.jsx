@@ -1,7 +1,7 @@
 import { createContext, useEffect, useReducer } from "react";
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://nestinn.onrender.com/api";
 
 const INITIAL_STATE = {
   user: JSON.parse(localStorage.getItem("user")) || null,
