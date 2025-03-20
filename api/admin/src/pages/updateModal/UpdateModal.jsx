@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./updateModal.scss";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://nestinn.onrender.com/api";
 
 const UpdateModal = ({ isOpen, onClose, rowData, apiPath, onUpdateSuccess }) => {
   const [formData, setFormData] = useState({});
