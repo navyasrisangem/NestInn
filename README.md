@@ -61,6 +61,8 @@ The project is deployed on **Render**:
 
 <img width="914" alt="image" src="https://github.com/user-attachments/assets/791ddbd2-39e0-4057-90b5-04a8c40ab7d1" />
 
+<img width="836" alt="image" src="https://github.com/user-attachments/assets/f561c62b-55d5-49a3-b3a2-b706771716cd" />
+
 <img width="866" alt="image" src="https://github.com/user-attachments/assets/72d36a4d-79cc-46ff-8322-1b254e13e0f0" />
 
 <img width="875" alt="image" src="https://github.com/user-attachments/assets/ccec9ac4-5727-4b36-99d8-110893ad384b" />
