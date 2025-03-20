@@ -9,7 +9,7 @@ import "./list.css";
 import useFetch from "../../hooks/useFetch";
 import { SearchContext } from "../../context/SearchContext";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://nestinn.onrender.com/api";
 
 const List = () => {
   const location = useLocation();
