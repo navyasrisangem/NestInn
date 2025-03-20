@@ -17,7 +17,7 @@ import { SearchContext } from "../../context/SearchContext.jsx";
 import { AuthContext } from "../../context/AuthContext.jsx";
 import Reserve from "../../components/reserve/Reserve.jsx";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://nestinn.onrender.com/api";
 
 
 const Hotel = () => {
