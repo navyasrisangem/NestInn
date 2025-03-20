@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./login.scss";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://nestinn.onrender.com/api";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
