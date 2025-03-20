@@ -38,8 +38,8 @@ export const verifyUser = (req, res, next) => {
 
 // Verify admin token only
 export const verifyAdmin = (req, res, next) => {
-    const token = req.cookies.adminToken;  // Only admin token
-
+    const token = req.cookies.adminToken; 
+    
     if (!token) {
         return next(createError(403, "Admin authentication required!"));
     }

@@ -40,7 +40,7 @@ export const login = async (req, res, next) => {
         const token = jwt.sign(
             { id: user._id, isAdmin: user.isAdmin },
             process.env.JWT,
-            { expiresIn: "1h" }
+            { expiresIn: "7d" }
         );
 
         const { password, ...otherDetails } = user._doc;
@@ -49,14 +49,18 @@ export const login = async (req, res, next) => {
         if (user.isAdmin) {
             res.cookie("adminToken", token, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "lax",
+                secure: true,
+                sameSite: "None",
+                domain: ".onrender.com",
+                maxAge: 7 * 24 * 60 * 60 * 1000,
             });
         } else {
             res.cookie("clientToken", token, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "lax",
+                secure: true,
+                sameSite: "None",
+                domain: ".onrender.com",
+                maxAge: 7 * 24 * 60 * 60 * 1000,
             });
         }
 
@@ -72,12 +76,12 @@ export const logout = async (req, res) => {
     const { userType } = req.body;  // Send userType from the frontend
 
     if (userType === "admin" && req.cookies.adminToken) {
-        res.clearCookie("adminToken", { httpOnly: true, secure: false, sameSite: "lax" });
+        res.clearCookie("adminToken", { httpOnly: true, secure: true, sameSite: "None" });
         return res.status(200).json({ message: "Admin logged out successfully" });
     }
 
     if (userType === "client" && req.cookies.clientToken) {
-        res.clearCookie("clientToken", { httpOnly: true, secure: false, sameSite: "lax" });
+        res.clearCookie("clientToken", { httpOnly: true, secure: true, sameSite: "None" });
         return res.status(200).json({ message: "Client logged out successfully" });
     }
 

@@ -10,6 +10,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
+
 const Datatable = ({ columns }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
@@ -18,7 +19,7 @@ const Datatable = ({ columns }) => {
   const { data} = useFetch(`${API_URL}/${path}`);
 
   const { fetchUserData } = useContext(AuthContext);  //  Trigger client update
-
+  
   useEffect(() => {
     if (data) {
       setList(data);
@@ -52,21 +53,14 @@ const Datatable = ({ columns }) => {
 
   const handleDelete = async (id, hotelId = null) => {
     try {
-      const token = localStorage.getItem("adminToken");
-      if (path === "rooms" && !hotelId) {
-        alert("Hotel ID is required to delete a room!");
-        return;
-      }
-
-
       const endpoint = hotelId
-        ? `${API_URL}/rooms/${id}/${hotelId._id}`  // Room deletion
-        : `${API_URL}/${path}/${id}`;          // User or Hotel deletion
+            ? `${API_URL}/rooms/${id}/${hotelId._id}`  
+            : `${API_URL}/${path}/${id}`;         
 
-      await axios.delete(endpoint, {
-        headers: { Authorization: `Bearer ${token}` },
-        withCredentials: true,
-      });
+        await axios.delete(endpoint, {
+            withCredentials: true,  // Only use cookies
+        });
+      
 
       setList(prevList => prevList.filter(item => item._id !== id));  // Remove from UI
 
