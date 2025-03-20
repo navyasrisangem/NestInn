@@ -2,7 +2,7 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import New from "./pages/new/New";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import {  userInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
-      <BrowserRouter>
+      
         <Routes>
           <Route path="/">
             <Route path="login" element={<Login />} />
@@ -97,7 +97,7 @@ function App() {
             </Route>
           </Route>
         </Routes>
-      </BrowserRouter>
+     
     </div>
   );
 }

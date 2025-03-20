@@ -50,16 +50,14 @@ export const login = async (req, res, next) => {
             res.cookie("adminToken", token, {
                 httpOnly: true,
                 secure: true,
-                sameSite: "None",
-                domain: ".onrender.com",
+                sameSite: "none",
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });
         } else {
             res.cookie("clientToken", token, {
                 httpOnly: true,
                 secure: true,
-                sameSite: "None",
-                domain: ".onrender.com",
+                sameSite: "none",
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });
         }
@@ -76,12 +74,12 @@ export const logout = async (req, res) => {
     const { userType } = req.body;  // Send userType from the frontend
 
     if (userType === "admin" && req.cookies.adminToken) {
-        res.clearCookie("adminToken", { httpOnly: true, secure: true, sameSite: "None" });
+        res.clearCookie("adminToken", { httpOnly: true, secure: true, sameSite: "none" });
         return res.status(200).json({ message: "Admin logged out successfully" });
     }
 
     if (userType === "client" && req.cookies.clientToken) {
-        res.clearCookie("clientToken", { httpOnly: true, secure: true, sameSite: "None" });
+        res.clearCookie("clientToken", { httpOnly: true, secure: true, sameSite: "none" });
         return res.status(200).json({ message: "Client logged out successfully" });
     }
 

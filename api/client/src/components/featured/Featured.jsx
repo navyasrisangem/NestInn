@@ -1,6 +1,9 @@
 import "./featured.css";
 import useFetch from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
+import HyderabadImg from "/images/hyderabad.png";
+import BangaloreImg from "/images/bangalore.png";
+import MumbaiImg from "/images/mumbai.png";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -29,7 +32,7 @@ const Featured = () => {
             ) : (
                 <>
                     <div className="featuredItem" onClick={() => handleClick("Hyderabad")}>
-                        <img src="../../../images/hyderabad.png" alt="hyderabad" className="featuredImg" />
+                        <img src={HyderabadImg} alt="hyderabad" className="featuredImg" />
                         <div className="featuredTitles">
                             <h1>Hyderabad</h1>
                             <h2>{data[0]} properties</h2>
@@ -37,7 +40,7 @@ const Featured = () => {
                     </div>
 
                     <div className="featuredItem" onClick={() => handleClick("Bangalore")}>
-                        <img src="../../../images/bangalore.png" alt="bangalore" className="featuredImg" />
+                        <img src={BangaloreImg} alt="bangalore" className="featuredImg" />
                         <div className="featuredTitles">
                             <h1>Bangalore</h1>
                             <h2>{data[1]} properties</h2>
@@ -45,7 +48,7 @@ const Featured = () => {
                     </div>
 
                     <div className="featuredItem" onClick={() => handleClick("Mumbai")}>
-                        <img src="../../../images/mumbai.png" alt="mumbai" className="featuredImg" />
+                        <img src={MumbaiImg} alt="mumbai" className="featuredImg" />
                         <div className="featuredTitles">
                             <h1>Mumbai</h1>
                             <h2>{data[2]} properties</h2>

@@ -8,6 +8,14 @@ import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
+import path from "path";
+import { fileURLToPath } from "url";
+
+//resolving dirname for esmodule
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 const app = express();
 
 app.set("trust proxy", 1);  // Trust Render's proxy to handle cookies correctly
@@ -27,7 +35,7 @@ mongoose.connection.on("disconnected", ()=> {
     console.log("mongoDB disconnected!");
 });
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:5173", "https://nestinn-client.onrender.com", "https://nestinn-admin.onrender.com"];
+const allowedOrigins = ["http://localhost:3000", "http://localhost:5173"];
 
 //middlewares
 
@@ -46,6 +54,17 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
 app.use("/api/rooms", roomsRoute);
+
+//  Serve static images
+app.use("/images", express.static(path.join(__dirname, "/client/public/images")));
+
+//use the client and admin app
+app.use("/client", express.static(path.join(__dirname, "/client/dist")));
+app.use("/admin", express.static(path.join(__dirname, "/admin/build")));
+
+//render client and admin for any path
+app.get("/client/*", (req,res) => res.sendFile(path.join(__dirname, "/client/dist/index.html")));
+app.get("/admin/*", (req,res) => res.sendFile(path.join(__dirname, "/admin/build/index.html")));
 
 app.use((err,req,res,next) => {
     const errorStatus = err.status || 500;
