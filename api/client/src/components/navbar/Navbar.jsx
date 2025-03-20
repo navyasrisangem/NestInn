@@ -4,7 +4,7 @@ import  {useContext} from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://nestinn.onrender.com/api";
 
 const Navbar = () => {
 const { user, dispatch } = useContext(AuthContext);
