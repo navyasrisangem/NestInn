@@ -8,7 +8,7 @@ import axios from "axios";
 import UpdateModal from "../../pages/updateModal/UpdateModal";
 import { AuthContext } from "../../context/AuthContext"; 
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://nestinn.onrender.com/api";
 
 
 const Datatable = ({ columns }) => {
